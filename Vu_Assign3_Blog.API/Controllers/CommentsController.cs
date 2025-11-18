@@ -17,11 +17,25 @@ public class CommentsController: ControllerBase
         _repository = repository;
     }
     // GET: api/comments
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<Comment>>> GetAllComments()
     {
         var comments = await _repository.GetAllAsync();
         return Ok(comments);
     }
+    // GET: api/comments/{id}
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Comment>> GetComment(int id)
+    {
+        var comment = await _repository.GetByIdAsync(id);
+        if (comment == null)
+        {
+            return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        return Ok(comment);
+    }
+
 
 
 }

@@ -5,15 +5,16 @@ using Vu_Assign3_Blog.Core.Interfaces;
 using Vu_Assign3_Blog.Core.Models;
 
 namespace Vu_Assign3_Blog.API.Controllers;
+
 [Route("api/[controller]")]
 [ApiController]
-public class PostsController: ControllerBase
+public class PostsController : ControllerBase
 {
-    private readonly IPostRepository _repository; 
-    public PostsController(IPostRepository repository) 
-    { 
-        _repository = repository; 
-    } 
+    private readonly IPostRepository _repository;
+    public PostsController(IPostRepository repository)
+    {
+        _repository = repository;
+    }
     // api/posts
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
@@ -21,5 +22,18 @@ public class PostsController: ControllerBase
         var posts = await _repository.GetAllAsync();
         return Ok(posts);
     }
+
+    // GET: api/posts/{id}
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Post>> GetPost(int id)
+    {
+        var post = await _repository.GetByIdAsync(id);
+        if (post == null)
+        {
+            return NotFound(new { message = $"Post with ID {id} not found" });
+        }
+        return Ok(post);
+    }
+
 
 }
