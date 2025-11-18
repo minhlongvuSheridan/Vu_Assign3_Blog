@@ -8,10 +8,10 @@ namespace Vu_Assign3_Blog.Core.Interfaces
 {
     public interface IPostRepository
     {
-        Task<IEnumerable<Comment>> GetAllAsync();
-        Task<Comment?> GetByIdAsync(int id);
-        Task<Comment> CreateAsync(Comment comment);
-        Task<Comment?> UpdateAsync(Comment comment);
+        Task<IEnumerable<Post>> GetAllAsync();
+        Task<Post?> GetByIdAsync(int id);
+        Task<Post> CreateAsync(Post post);
+        Task<Post?> UpdateAsync(Post post);
         Task<bool> DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
     }
