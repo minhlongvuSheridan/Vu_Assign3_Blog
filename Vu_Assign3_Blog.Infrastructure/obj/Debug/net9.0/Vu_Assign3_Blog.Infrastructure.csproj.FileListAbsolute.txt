@@ -1,0 +1,15 @@
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.deps.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.pdb
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Core.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Core.pdb
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.AssemblyInfo.cs
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assig.CE94F1C1.Up2Date
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\refint\Vu_Assign3_Blog.Infrastructure.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.pdb
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\ref\Vu_Assign3_Blog.Infrastructure.dll

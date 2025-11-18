@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Vu_Assign3_Blog.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Vu_Assign3_Blog.Core": "1.0.0"
+        },
+        "runtime": {
+          "Vu_Assign3_Blog.Infrastructure.dll": {}
+        }
+      },
+      "Vu_Assign3_Blog.Core/1.0.0": {
+        "runtime": {
+          "Vu_Assign3_Blog.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Vu_Assign3_Blog.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Vu_Assign3_Blog.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
