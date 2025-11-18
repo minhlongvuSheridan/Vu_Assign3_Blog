@@ -11,16 +11,19 @@ namespace Vu_Assign3_Blog.API.Controllers;
 [ApiController]
 public class PostsController : ControllerBase
 {
-    private readonly IPostRepository _repository;
-    public PostsController(IPostRepository repository)
+    private readonly IPostRepository _postRepository;
+    private readonly ICommentRepository _commentRepository;
+    public PostsController(IPostRepository postRepository,
+                        ICommentRepository commentRepository)
     {
-        _repository = repository;
+        _postRepository = postRepository;
+        _commentRepository = commentRepository;
     }
     // api/posts
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
     {
-        var posts = await _repository.GetAllAsync();
+        var posts = await _postRepository.GetAllAsync();
         return Ok(posts);
     }
 
@@ -28,7 +31,7 @@ public class PostsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Post>> GetPost(int id)
     {
-        var post = await _repository.GetByIdAsync(id);
+        var post = await _postRepository.GetByIdAsync(id);
         if (post == null)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
@@ -49,7 +52,7 @@ public class PostsController : ControllerBase
             Title = postDto.Title,
             Content = postDto.Content
         };
-        var createdPost = await _repository.CreateAsync(post);
+        var createdPost = await _postRepository.CreateAsync(post);
         return CreatedAtAction(
         nameof(GetPost),
         new { id = createdPost.Id },
@@ -66,7 +69,7 @@ public class PostsController : ControllerBase
         {
             return BadRequest(ModelState);
         }
-        var exists = await _repository.ExistsAsync(id);
+        var exists = await _postRepository.ExistsAsync(id);
         if (!exists)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
@@ -78,7 +81,7 @@ public class PostsController : ControllerBase
 
         };
         post.UpdatedDate = DateTime.Now;
-        var updatedPost = await _repository.UpdateAsync(post);
+        var updatedPost = await _postRepository.UpdateAsync(post);
         return Ok(updatedPost);
     }
     // PATCH: api/posts/{id}
@@ -90,7 +93,7 @@ JsonPatchDocument<Post> patchDoc)
         {
             return BadRequest(new { message = "Patch document is null" });
         }
-        var post = await _repository.GetByIdAsync(id);
+        var post = await _postRepository.GetByIdAsync(id);
         if (post == null)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
@@ -101,7 +104,7 @@ JsonPatchDocument<Post> patchDoc)
             return BadRequest(ModelState);
         }
         post.UpdatedDate = DateTime.UtcNow;
-        await _repository.UpdateAsync(post);
+        await _postRepository.UpdateAsync(post);
         return Ok(post);
     }
 
@@ -109,12 +112,45 @@ JsonPatchDocument<Post> patchDoc)
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePost(int id)
     {
-        var deleted = await _repository.DeleteAsync(id);
+        var deleted = await _postRepository.DeleteAsync(id);
         if (!deleted)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
         }
         return NoContent();
+    }
+
+    // GET: api/posts/{postId}/comments
+    [HttpGet("{postId}/comments")]
+    public async Task<ActionResult<List<Comment>>> GetCommentsByPostId(int postId)
+    {
+        var post = await _postRepository.GetByIdAsync(postId);
+        if (post == null)
+        {
+            return NotFound(new { message = $"Post with ID {postId} not found" });
+        }
+        return Ok(post.Comments);
+    }
+    // POST: api/posts/{postId}/comments
+    [HttpPost("{postId}/comments")]
+    public async Task<ActionResult<Comment>> AddCommentToPostId(int postId,
+                                    [FromBody] CommentCreateDto commentCreateDto)
+    {
+        var post = await _postRepository.GetByIdAsync(postId);
+        if (post == null)
+        {
+            return NotFound(new { message = $"Post with ID {postId} not found" });
+        }
+        Comment comment = new Comment
+        {
+            Name = commentCreateDto.Name,
+            Email = commentCreateDto.Email,
+            Content = commentCreateDto.Content,
+            PostId = post.Id
+        };
+        await _postRepository.UpdateAsync(post);
+        await _commentRepository.UpdateAsync(comment);
+        return Ok(comment);
     }
 
 }
