@@ -57,4 +57,64 @@ public class PostsController : ControllerBase
         );
     }
 
+    // PUT: api/posts/{id}
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateDto
+    postUpdateDto)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        var exists = await _repository.ExistsAsync(id);
+        if (!exists)
+        {
+            return NotFound(new { message = $"Post with ID {id} not found" });
+        }
+        var post = new Post
+        {
+            Id = id,
+            Title = postUpdateDto.Title,
+
+        };
+        post.UpdatedDate = DateTime.Now;
+        var updatedPost = await _repository.UpdateAsync(post);
+        return Ok(updatedPost);
+    }
+    // PATCH: api/posts/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> PatchPost(int id, [FromBody]
+JsonPatchDocument<Post> patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest(new { message = "Patch document is null" });
+        }
+        var post = await _repository.GetByIdAsync(id);
+        if (post == null)
+        {
+            return NotFound(new { message = $"Post with ID {id} not found" });
+        }
+        patchDoc.ApplyTo(post, ModelState);
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        post.UpdatedDate = DateTime.UtcNow;
+        await _repository.UpdateAsync(post);
+        return Ok(post);
+    }
+
+    // DELETE: api/posts/{id}
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeletePost(int id)
+    {
+        var deleted = await _repository.DeleteAsync(id);
+        if (!deleted)
+        {
+            return NotFound(new { message = $"Post with ID {id} not found" });
+        }
+        return NoContent();
+    }
+
 }
