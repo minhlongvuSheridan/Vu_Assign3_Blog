@@ -2,6 +2,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Vu_Assign3_Blog.Core;
+using Vu_Assign3_Blog.Core.DTOs;
 using Vu_Assign3_Blog.Core.Interfaces;
 using Vu_Assign3_Blog.Core.Models;
 
@@ -36,6 +37,32 @@ public class CommentsController: ControllerBase
         return Ok(comment);
     }
 
+    // PUT: api/comments/{id}
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateComment(int id, [FromBody] CommentUpdateDto
+    commentUpdateDto)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        var exists = await _repository.ExistsAsync(id);
+        if (!exists)
+        {
+            return NotFound(new { message = $"Comment with ID {id} not found" });
+        }
+        var comment = new Comment
+        {
+            Id = id,
+            PostId = commentUpdateDto.PostId,
+            Name = commentUpdateDto.Name,
+            Email = commentUpdateDto.Email,
+            Content = commentUpdateDto.Content
 
+        };
+        var updatedComment = await _repository.UpdateAsync(comment);
+        return Ok(updatedComment);
+    }
+    
 
 }
