@@ -1,0 +1,25 @@
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
+using Vu_Assign3_Blog.Core;
+using Vu_Assign3_Blog.Core.Interfaces;
+using Vu_Assign3_Blog.Core.Models;
+
+namespace Vu_Assign3_Blog.API.Controllers;
+[Route("api/[controller]")]
+[ApiController]
+public class PostsController: ControllerBase
+{
+    private readonly IPostRepository _repository; 
+    public PostsController(IPostRepository repository) 
+    { 
+        _repository = repository; 
+    } 
+    // api/posts
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
+    {
+        var posts = await _repository.GetAllAsync();
+        return Ok(posts);
+    }
+
+}
