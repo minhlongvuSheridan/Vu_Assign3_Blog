@@ -13,3 +13,6 @@ C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Soft
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\refint\Vu_Assign3_Blog.Infrastructure.dll
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.pdb
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\ref\Vu_Assign3_Blog.Infrastructure.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\bin\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.runtimeconfig.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.sourcelink.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Infrastructure\obj\Debug\net9.0\Vu_Assign3_Blog.Infrastructure.genruntimeconfig.cache
