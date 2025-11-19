@@ -1,0 +1,12 @@
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\bin\Release\net9.0\Vu_Assign3_Blog.Core.deps.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\bin\Release\net9.0\Vu_Assign3_Blog.Core.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\bin\Release\net9.0\Vu_Assign3_Blog.Core.pdb
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.AssemblyInfoInputs.cache
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.AssemblyInfo.cs
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.csproj.CoreCompileInputs.cache
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.sourcelink.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\refint\Vu_Assign3_Blog.Core.dll
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\Vu_Assign3_Blog.Core.pdb
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.Core\obj\Release\net9.0\ref\Vu_Assign3_Blog.Core.dll
