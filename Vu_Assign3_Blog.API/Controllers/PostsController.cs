@@ -173,7 +173,7 @@ JsonPatchDocument<Post> patchDoc)
             };
         }
 
-        return Ok(post);
+        return Ok(postReturnDto);
     }
 
     // DELETE: api/posts/{id}

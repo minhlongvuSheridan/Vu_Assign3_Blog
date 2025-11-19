@@ -82,7 +82,21 @@ public class CommentsController : ControllerBase
 
         };
         var updatedComment = await _repository.UpdateAsync(comment);
-        return Ok(updatedComment);
+        CommentReturnDto? commentReturnDto = null;
+        if(updatedComment != null)
+        {
+            commentReturnDto = new CommentReturnDto
+        {
+            Name = updatedComment.Name,
+            Email = updatedComment.Email,
+            Content = updatedComment.Content,
+            PostId = updatedComment.PostId,
+            Id = updatedComment.Id
+        };
+        }
+        
+
+        return Ok(commentReturnDto);
     }
     // PATCH: api/comments/{id}
     [HttpPatch("{id}")]
@@ -103,8 +117,20 @@ JsonPatchDocument<Comment> patchDoc)
         {
             return BadRequest(ModelState);
         }
-        await _repository.UpdateAsync(comment);
-        return Ok(comment);
+        var patchedComment = await _repository.UpdateAsync(comment);
+        CommentReturnDto? commentReturnDto = null;
+        if(patchedComment != null)
+        {
+            commentReturnDto = new CommentReturnDto
+        {
+            Name = patchedComment.Name,
+            Email = patchedComment.Email,
+            Content = patchedComment.Content,
+            PostId = patchedComment.PostId,
+            Id = patchedComment.Id
+        };
+        }
+        return Ok(commentReturnDto);
     }
     // DELETE: api/comments/{id}
     [HttpDelete("{id}")]
