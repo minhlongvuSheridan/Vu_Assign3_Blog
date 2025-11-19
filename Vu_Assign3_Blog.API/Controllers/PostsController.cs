@@ -21,22 +21,46 @@ public class PostsController : ControllerBase
     }
     // api/posts
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
+    public async Task<ActionResult<List<PostReturnDto>>> GetAllPosts()
     {
         var posts = await _postRepository.GetAllAsync();
-        return Ok(posts);
+
+        List<PostReturnDto> postReturnDto = new List<PostReturnDto>();
+        foreach(Post post in posts)
+        {
+            postReturnDto.Add(new PostReturnDto
+            {
+               Id = post.Id,
+               Title = post.Title,
+               Content = post.Content,
+               Author = post.Author,
+               CreatedDate = post.CreatedDate,
+               UpdatedDate = post.UpdatedDate, 
+            });
+        }
+        return Ok(postReturnDto);
     }
 
     // GET: api/posts/{id}
     [HttpGet("{id}")]
-    public async Task<ActionResult<Post>> GetPost(int id)
+    public async Task<ActionResult<PostReturnDto>> GetPost(int id)
     {
         var post = await _postRepository.GetByIdAsync(id);
         if (post == null)
         {
             return NotFound(new { message = $"Post with ID {id} not found" });
         }
-        return Ok(post);
+        PostReturnDto postReturnDto = new PostReturnDto
+            {
+               Id = post.Id,
+               Title = post.Title,
+               Content = post.Content,
+               Author = post.Author,
+               CreatedDate = post.CreatedDate,
+               UpdatedDate = post.UpdatedDate, 
+            };
+
+        return Ok(postReturnDto);
     }
     // POST: api/posts
     [HttpPost]
@@ -78,6 +102,8 @@ public class PostsController : ControllerBase
         {
             Id = id,
             Title = postUpdateDto.Title,
+            Content = postUpdateDto.Content,
+            Author = postUpdateDto.Author
 
         };
         post.UpdatedDate = DateTime.Now;
@@ -122,18 +148,30 @@ JsonPatchDocument<Post> patchDoc)
 
     // GET: api/posts/{postId}/comments
     [HttpGet("{postId}/comments")]
-    public async Task<ActionResult<List<Comment>>> GetCommentsByPostId(int postId)
+    public async Task<ActionResult<List<CommentReturnDto>>> GetCommentsByPostId(int postId)
     {
         var post = await _postRepository.GetByIdAsync(postId);
         if (post == null)
         {
             return NotFound(new { message = $"Post with ID {postId} not found" });
         }
-        return Ok(post.Comments);
+        List<CommentReturnDto> commentReturnDto = new List<CommentReturnDto>();
+        foreach (Comment comment in post.Comments)
+        {
+            commentReturnDto.Add(new CommentReturnDto
+            {
+                Name = comment.Name,
+                Email = comment.Email,
+                Content = comment.Content,
+                PostId = comment.PostId,
+                Id = comment.Id
+            });
+        }
+        return Ok(commentReturnDto);
     }
     // POST: api/posts/{postId}/comments
     [HttpPost("{postId}/comments")]
-    public async Task<ActionResult<Comment>> AddCommentToPostId(int postId,
+    public async Task<ActionResult<CommentReturnDto>> AddCommentToPostId(int postId,
                                     [FromBody] CommentCreateDto commentCreateDto)
     {
         var post = await _postRepository.GetByIdAsync(postId);
@@ -141,16 +179,29 @@ JsonPatchDocument<Post> patchDoc)
         {
             return NotFound(new { message = $"Post with ID {postId} not found" });
         }
+
         Comment comment = new Comment
         {
             Name = commentCreateDto.Name,
             Email = commentCreateDto.Email,
             Content = commentCreateDto.Content,
-            PostId = post.Id
+            PostId = postId
         };
-        await _postRepository.UpdateAsync(post);
-        await _commentRepository.UpdateAsync(comment);
-        return Ok(comment);
+        await _commentRepository.CreateAsync(comment);
+
+        CommentReturnDto commentReturnDto = new CommentReturnDto
+        {
+            Name = comment.Name,
+            Email = comment.Email,
+            Content = comment.Content,
+            PostId = comment.PostId,
+            Id = comment.Id
+        };
+        return CreatedAtAction(
+        nameof(GetPost),
+        new { id = commentReturnDto.Id },
+        commentReturnDto
+        );
     }
 
 }

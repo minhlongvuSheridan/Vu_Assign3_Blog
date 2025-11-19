@@ -47,7 +47,7 @@ namespace Vu_Assign3_Blog.Infrastructure.Repositories
 
         public async Task<Post?> GetByIdAsync(int id)
         {
-            return await _context.Posts.FindAsync(id);
+            return await _context.Posts.Include(p=>p.Comments).FirstOrDefaultAsync(p=> p.Id == id);
         }
 
         public async Task<Post?> UpdateAsync(Post post)

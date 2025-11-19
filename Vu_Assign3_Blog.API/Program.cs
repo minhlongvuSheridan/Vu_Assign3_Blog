@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Vu_Assign3_Blog.Core.Interfaces;
 using Vu_Assign3_Blog.Infrastructure.Data;
 using Vu_Assign3_Blog.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+});
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
