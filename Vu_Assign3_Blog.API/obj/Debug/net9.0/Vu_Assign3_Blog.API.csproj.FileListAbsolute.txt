@@ -160,3 +160,9 @@ C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Soft
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\obj\Debug\net9.0\Vu_Assign3_Blog.API.sourcelink.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\web.config
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\appsettings.Development.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\appsettings.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\Vu_Assign3_Blog.API.deps.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\Vu_Assign3_Blog.API.runtimeconfig.json
+C:\Users\haivu\OneDrive - Sheridan College\Desktop\computer\sem5\Enterprise Software Systems\assign3\Vu_Assign3_Blog\Vu_Assign3_Blog.API\bin\Debug\net9.0\publish\Vu_Assign3_Blog.API.staticwebassets.endpoints.json

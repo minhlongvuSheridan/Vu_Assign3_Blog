@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vu_Assign3_Blog.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80d2a2ab796f38c3d7e48ef8cbdfa3b5c69e8ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88cd0f3fd391d635b0028e6b31b257f726f0a334")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vu_Assign3_Blog.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vu_Assign3_Blog.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
