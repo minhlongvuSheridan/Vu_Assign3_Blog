@@ -19,22 +19,43 @@ public class CommentsController : ControllerBase
     }
     // GET: api/comments
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Comment>>> GetAllComments()
+    public async Task<ActionResult<List<CommentReturnDto>>> GetAllComments()
     {
         var comments = await _repository.GetAllAsync();
-        return Ok(comments);
+        List<CommentReturnDto> commentReturnDto = new List<CommentReturnDto>();
+        foreach (Comment comment in comments)
+        {
+            commentReturnDto.Add(new CommentReturnDto
+            {
+                Name = comment.Name,
+                Email = comment.Email,
+                Content = comment.Content,
+                PostId = comment.PostId,
+                Id = comment.Id
+            });
+        }
+
+        return Ok(commentReturnDto);
     }
     // GET: api/comments/{id}
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Comment>> GetComment(int id)
+    public async Task<ActionResult<CommentReturnDto>> GetComment(int id)
     {
         var comment = await _repository.GetByIdAsync(id);
         if (comment == null)
         {
             return NotFound(new { message = $"Comment with ID {id} not found" });
         }
-        return Ok(comment);
+        CommentReturnDto commentReturnDto = new CommentReturnDto
+        {
+            Name = comment.Name,
+            Email = comment.Email,
+            Content = comment.Content,
+            PostId = comment.PostId,
+            Id = comment.Id
+        };
+        return Ok(commentReturnDto);
     }
 
     // PUT: api/comments/{id}

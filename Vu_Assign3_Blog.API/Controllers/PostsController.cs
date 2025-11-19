@@ -64,7 +64,7 @@ public class PostsController : ControllerBase
     }
     // POST: api/posts
     [HttpPost]
-    public async Task<ActionResult<Post>> CreatePost([FromBody] PostCreateDto
+    public async Task<ActionResult<PostReturnDto>> CreatePost([FromBody] PostCreateDto
     postDto)
     {
         if (!ModelState.IsValid)
@@ -77,10 +77,22 @@ public class PostsController : ControllerBase
             Content = postDto.Content
         };
         var createdPost = await _postRepository.CreateAsync(post);
+
+        PostReturnDto postReturnDto = new PostReturnDto
+            {
+               Id = createdPost.Id,
+               Title = createdPost.Title,
+               Content = createdPost.Content,
+               Author = createdPost.Author,
+               CreatedDate = createdPost.CreatedDate,
+               UpdatedDate = createdPost.UpdatedDate, 
+            };
+
+
         return CreatedAtAction(
         nameof(GetPost),
-        new { id = createdPost.Id },
-        createdPost
+        new { id = postReturnDto.Id },
+        postReturnDto
         );
     }
 
