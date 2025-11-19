@@ -120,7 +120,23 @@ public class PostsController : ControllerBase
         };
         post.UpdatedDate = DateTime.Now;
         var updatedPost = await _postRepository.UpdateAsync(post);
-        return Ok(updatedPost);
+
+        PostReturnDto? postReturnDto = null; 
+        if(updatedPost != null)
+        {
+            postReturnDto = new PostReturnDto
+            {
+               Id = updatedPost.Id,
+               Title = updatedPost.Title,
+               Content = updatedPost.Content,
+               Author = updatedPost.Author,
+               CreatedDate = updatedPost.CreatedDate,
+               UpdatedDate = updatedPost.UpdatedDate, 
+            };
+        }
+        
+
+        return Ok(postReturnDto);
     }
     // PATCH: api/posts/{id}
     [HttpPatch("{id}")]
@@ -142,7 +158,21 @@ JsonPatchDocument<Post> patchDoc)
             return BadRequest(ModelState);
         }
         post.UpdatedDate = DateTime.UtcNow;
-        await _postRepository.UpdateAsync(post);
+        var patchedPost =  await _postRepository.UpdateAsync(post);
+        PostReturnDto? postReturnDto = null; 
+        if(patchedPost != null)
+        {
+            postReturnDto = new PostReturnDto
+            {
+               Id = patchedPost.Id,
+               Title = patchedPost.Title,
+               Content = patchedPost.Content,
+               Author = patchedPost.Author,
+               CreatedDate = patchedPost.CreatedDate,
+               UpdatedDate = patchedPost.UpdatedDate, 
+            };
+        }
+
         return Ok(post);
     }
 
